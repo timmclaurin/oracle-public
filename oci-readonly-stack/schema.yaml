@@ -1,0 +1,43 @@
+title: Project Workbench read-only access
+description: Creates the WorkbenchReadOnly group, the workbench-readonly user with your Workbench public key, and a policy that reads Fusion environments and lists compartments.
+schemaVersion: 1.1.0
+version: "20190304"
+locale: "en"
+
+variableGroups:
+  - title: Workbench
+    variables:
+      - workbench_public_key
+      - workbench_user_email
+  - title: Filled in by Resource Manager
+    visible: false
+    variables:
+      - tenancy_ocid
+      - region
+
+variables:
+  workbench_public_key:
+    type: string
+    multiline: true
+    required: true
+    title: Workbench public key
+    description: Paste the public key from the customer pods page in Project Workbench.
+  workbench_user_email:
+    type: string
+    required: false
+    title: Email for the workbench-readonly user
+    description: Leave empty unless your identity domain requires an email on every user.
+
+outputs:
+  tenancy_ocid:
+    type: copyableString
+    title: tenancy_ocid
+  user_ocid:
+    type: copyableString
+    title: user_ocid
+  fingerprint:
+    type: copyableString
+    title: fingerprint
+  home_region:
+    type: copyableString
+    title: home_region

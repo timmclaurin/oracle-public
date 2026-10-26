@@ -1,0 +1,4 @@
+[
+  "Allow group WorkbenchReadOnly to read fusion-family in tenancy",
+  "Allow group WorkbenchReadOnly to inspect compartments in tenancy"
+]
